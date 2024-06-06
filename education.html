@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Personal Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="image/favicon.png" sizes="100x100">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body, table, td, th, .slideshow-container {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("image/background.gif");
+}
+img {
+  display: block;
+}
+
+/* Centering the table container */
+.table-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Ensure there's no gap between the banner and the table */
+.banner-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Other existing styles */
+.content {
+  padding-left: 16px;
+  font-family: montserrat;
+}
+
+.content1 {
+  font-family: montserrat;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc1cc;
+}
+
+.topnav img {
+  padding: 5px;
+  height: 80px; 
+  width: 150px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.topnav a:hover {
+  background-color: #FFFFCA;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffc1cc;
+  color: white;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Ensure slideshow images fit the container */
+.slideshow-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: auto;
+}
+
+/* Additional styles for playlist and headings */
+.playlist-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  text-align: center;
+}
+
+.playlist-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playlist-container li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.playlist-container li:hover {
+  background: #f06;
+  color: white;
+}
+
+.playlist-container audio {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.heading-box {
+  display: inline-block;
+  background-color: lightyellow;
+  padding: 8px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  text-align: center;
+}
+
+.heading-box h2 {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  text-decoration: underline;
+}
+
+.heading-box:hover {
+  background-color: grey;
+}
+body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #4a004a;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 85%;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #ff66b2;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: white;
+            border: 4px solid #ff66b2;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #ff66b2;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #ff66b2;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #ff66b2;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #ff66b2 transparent transparent;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: lightpink;
+            position: relative;
+            border-radius: 6px;
+        }
+        .timeline-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #cc0052;
+            margin-top: 0;
+        }
+        p {
+            font-size: 1.1em;
+        }
+ 
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html"><img src="image/logo.png" alt="Logo">
+  <a href="index.html">HOME</a>
+  <a href="aboutme.html">ABOUT ME</a>
+  <a href="family.html">FAMILY</a>
+  <a class="active" href="education.html">EDUCATION</a>
+  <a href="favourite.html">FAVOURITE</a>
+  <a href="gallery.html">GALLERY</a>
+<a href="socialmedia.html">SOCIAL MEDIA</a>
+</div>
+
+<br>
+<div class="banner-container">
+  <center><img src="image/banner.png" width="80%"></center>
+</div>
+
+<div class="table-container">
+  <table width="100%" border="1" style="border: 20px solid white;">
+    <!-- Your existing table content -->
+    <tr>
+      <td colspan="2" bgcolor="white">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="image/photoslide1.jpg" style="width:100%">
+            <div class="text">Scenery</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="image/photoslide2.jpg" style="width:100%">
+            <div class="text">Quotes</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="image/photoslide3.jpg" style="width:100%">
+            <div class="text">Scenery</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+      </td>
+    </tr>
+
+  <tr valign="top">
+    <td bgcolor="white" width="65%" rowspan="2">
+      <br>
+      <center><div class="heading-box"><h2><font face="open sans" color="deeppink"><u>MY EDUCATION</u></font></h2></div></center>
+<br>
+      <div class="content">
+           <center><p>Hi! this is my educational journey, the schools I've attended, and the academic milestones I've achieved.</p></center>
+<br>
+        <div class="container">
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <img src="image/skpm.png" alt="Primary School" style="border: 3px dashed white; border-radius: 20px;"> 
+                    <h2>Primary School</h2>
+                    <p>School Name: SK Parit Mahang</p>
+                    <p>Years Attended: 2007 - 2012</p>
+                    <p>Location: Kg. Parit Mahang, Jeram, Selangor</p>
+                    <h3>Academic Milestones</h3>
+                    <ul>
+                        <li>5A in UPSR</li>
+                        <li>School representative in netball tournament and cross country running</li>
+                        <li>Class Assistant</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <img src="image/smkbkt.jpg" alt="Secondary School" style="border: 3px dashed white; border-radius: 20px;">
+                    <h2>Secondary School</h2>
+                    <p>School Name: SMK Bukit Kuching Tengah</p>
+                    <p>Years Attended: 2013 - 2017</p>
+                    <p>Location: Kg. Bukit Kuching Tengah, Jeram, Selangor</p>
+                    <h3>Academic Milestones</h3>
+                    <ul>
+                        <li>School Prefect</li>
+                        <li>Achieved Pengakap Muda Development Badge</li>
+                        <li>Excellent in PT3 & SPM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <img src="image/uitm.png" alt="University" style="border: 3px dashed white; border-radius: 20px;">
+                    <h2>University</h2>
+                    <p>School Name: Universiti Teknologi Mara</p>
+                    <p>Years Attended: 2022-2024</p>
+                    <p>Location: Sungai Petani, Kedah</p>
+                    <p>Diploma: Diploma in Information Management</p>
+<h3>Academic Milestones</h3>
+                    <ul>
+                        <li>Dean List Semerter 1-4</li>
+                        <li>Actively participated in University Activities</li>
+                        <li>Head of Outreach Programmes</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+             
+    </td>
+    <td bgcolor="lightpink" width="25%" height="300">
+      <br>
+      <center><div class="heading-box"><h2><font face="open sans" color="deeppink"><u>HELLO THERE!</u></font></h2></div></center>
+<br>
+      <center><img src="image/bio.JPG" width="70%" style="border: 3px dashed white; border-radius: 20px;"></center>
+      <br>
+<div class="content1">
+
+      <center><b><font-family=" size="3">NAME: AINA MISHA BINTI MOHD RIDZUAN</font></b></center>
+      <br>
+      <center><b><font size="3">MATRIC NUMBER: 2022791809</font></b></center>
+      <br>
+      <center><b><font size="3">GROUP: KCDIM1105A</font></b></center>
+<br>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="lightpink" width="25%">
+      <br>
+      <center><div class="heading-box"><h2><font face="open sans" color="deeppink"><u>MY PLAYLIST</u></font></h2></div></center>
+<br>
+     <div class="content1">
+ <center><marquee>Now Playing... Enjoy guys <3</marquee></center>
+<center>
+<br>
+<center><div class="playlist-container">
+        <h2><font color="deeppink">SONGS</font></h2>
+        <ul id="playlist">
+            <li data-src="audio/SZA-Saturn.mp3">Saturn By SZA</li>
+            <li data-src="audio/NewJeans-Bubble Gum.mp3">Bubble Gum By NewJeans</li>
+            <li data-src="audio/Conan Gray  Heather.mp3">Heather By Conan Gray</li>
+        </ul>
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div></center>
+</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="pink" align="center">
+<div class="content">
+      <font size="2">Copyright © 2024 | AINA MISHA BINTI MOHD RIDZUAN | 2022791809 | KCDIM1105A</font>
+</div>
+    </td>
+  </tr>
+</table>
+</div>
+
+<a href="#top"><img src="image/top.png" class="back-to-top"></a>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playlist = document.getElementById('playlist');
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            playlist.addEventListener('click', (e) => {
+                if (e.target && e.target.nodeName === "LI") {
+                    const songSrc = e.target.getAttribute('data-src');
+                    audioPlayer.src = songSrc;
+                    audioPlayer.play();
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>
